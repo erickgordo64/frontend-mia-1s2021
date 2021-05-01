@@ -28,7 +28,7 @@ export default class login extends Component {
                     <br/>
                     <div className="col-md-5">
                         <div className="card card-body">
-                            <H2>LOGIN ADMIN</H2>
+                            <h2>LOGIN ADMIN</h2>
                             <br></br>
                             <br></br>
                             <form onSubmit={this.onSubmit}>
