@@ -6,6 +6,7 @@ import Navegar from './components/navigate';
 import login from './components/login'
 import loginA from './components/loginA'
 import Estudiante from './components/estudiante';
+import Carga from './components/carga'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" exact component={login}></Route>
       <Route path="/loginA" exact component={loginA}></Route>
       <Route path="/estudiante" component={Estudiante}></Route>
+      <Route path="/carga" component={Carga}></Route>
     </Router>
   );
 }
