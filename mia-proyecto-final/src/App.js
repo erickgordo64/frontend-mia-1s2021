@@ -7,6 +7,7 @@ import login from './components/login'
 import loginA from './components/loginA'
 import Estudiante from './components/estudiante';
 import Carga from './components/carga'
+import Chat from './components/chat'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/loginA" exact component={loginA}></Route>
       <Route path="/estudiante" component={Estudiante}></Route>
       <Route path="/carga" component={Carga}></Route>
+      <Route path="/chat" component={Chat}></Route>
     </Router>
   );
 }

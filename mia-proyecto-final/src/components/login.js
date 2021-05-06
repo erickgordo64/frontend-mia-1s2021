@@ -67,6 +67,7 @@ export default class login extends Component {
                                 <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmit(e)}>Ingresar</button>
                             </form>
                             <Link to="/registro" className="nav-link"><p>Registrar Usuario</p></Link>
+                            <Link to="/registro" className="nav-link"><p>Login Admin</p></Link>
                         </div>
                     </div>
                 </div>
