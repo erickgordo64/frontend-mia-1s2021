@@ -4,22 +4,45 @@ import { instanceOf } from 'prop-types'
 import axios from 'axios'
 import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router-dom'
-import { withCookies, Cookies } from 'react-cookie'
 import Naviga from './navigate'
 import Cookies from 'universal-cookie'
 
 const cookies = new Cookies();
 
-export default class login extends Component {
+export default class loginA extends Component {
 
-    static protoTypex = {
-        cookies: instanceOf(Cookies).isRequired
+    state={
+        form:{
+            Username:"",
+            Password:""
+        }
     }
 
     onSubmit = async (e) => {
         e.preventDefault();
+        var nom = document.getElementById('usuario').value;
+        var des = document.getElementById('contraseña').value;
 
-        this.props.history.push('/estuiante')
+        const res=await axios.post('http://localhost:4000/loginA',{Username: nom, Password: des})
+        .then(response=>{
+            return response.data;
+        })
+        .then(response=>{
+                cookies.set('id',response.ID,{path:"/"});
+                cookies.set('username',response.Username,{path:"/"});
+                alert(`Bienvenido ${response.Username}`);
+                window.location.href="./DashA";
+        })
+        .catch(error=>{
+            console.log(error)
+        });
+        //this.props.history.push('/estuiante')
+    }
+
+    componentDidMount(){
+        if(cookies.get('id')){
+            window.location.href="./loginA";
+        }        
     }
 
     render() {

@@ -10,7 +10,7 @@ export default class Navegar extends Component {
     cerrarSesion = (e) => {
         cookies.remove('id', { path: "/" });
         cookies.remove('username', { path: "/" });
-        window.location.href = "/";
+        window.location.href = "/loginA";
     }
 
     render() {
