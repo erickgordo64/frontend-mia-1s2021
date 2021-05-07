@@ -27,10 +27,10 @@ export default class loginA extends Component {
             return response.data;
         })
         .then(response=>{
-                cookies.set('id',response.ID,{path:"/"});
-                cookies.set('username',response.Username,{path:"/"});
-                alert(`Bienvenido ${response.Username}`);
-                window.location.href="./DashA";
+            cookies.set('id', response.ID, { path: "/" });
+            cookies.set('username', response.Username, { path: "/" });
+            alert(`Bienvenido ${response.Username}`);
+            window.location.href = "./DashA";
         })
         .catch(error=>{
             console.log(error)
