@@ -4,51 +4,56 @@ import axios from 'axios'
 import Cookies from 'universal-cookie'
 import NavCliente from './navcliente'
 
-const socket=new WebSocket("ws://localhost:4000/ws")
+const socket = new WebSocket("ws://localhost:4000/ws")
 
-function Chat(){
-    const[message, setMessage]=useState('')
-    const[inputValue, setInputValue]=useState('')
+function Chat() {
+  const [message, setMessage] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
-    useEffect(()=>{
-        socket.onopen=()=>{
-            setMessage('Connected')
-        };
+  const { messages } = this.props;
 
-        socket.onmessage = (e) => {
-            console.log('e: ', e)
-            setMessage("Get message from server: " + e.data)
-          };
+  useEffect(() => {
+    socket.onopen = () => {
+      setMessage('Connected')
+    };
 
-          return () => {
-            socket.close()
-          }
-        
-      
-    },[])
+    socket.onmessage = (e) => {
+      console.log('e: ', e)
+      setMessage("Get message from server: " + e.data)
+    };
 
-    const handleClick = useCallback((e) => {
-        e.preventDefault()
-    
-        socket.send(JSON.stringify({
-          message: inputValue
-        }))
-      }, [inputValue])
+    return () => {
+      socket.close()
+    }
 
-      const handleChange = useCallback((e) => {
-        setInputValue(e.target.value)                                     
-      }, [])
 
-    
+  }, [])
 
-    return(
-        <div>
-          <NavCliente/>
-        <input id="input" type="text" value={inputValue} onChange={handleChange} />
-        <button onClick={handleClick}>Send</button>
-        <pre>{message}</pre>
-      </div>
-    )
+  const handleClick = useCallback((e) => {
+    e.preventDefault()
+
+    socket.send(JSON.stringify({
+      message: inputValue
+    }))
+  }, [inputValue])
+
+  const handleChange = useCallback((e) => {
+    setInputValue(e.target.value)
+  }, [])
+
+
+
+  return (
+    <div>
+      <NavCliente />
+      <input id="input" type="text" value={inputValue} onChange={handleChange} />
+      <ul className="list-group">
+        {messages.map(m => this.renderMessage(handleChange))}
+      </ul>
+      <button onClick={handleClick}>Send</button>
+      <pre>{message}</pre>
+    </div>
+  )
 }
 
 export default Chat
