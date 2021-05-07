@@ -36,8 +36,10 @@ function Chat(){
       }, [inputValue])
 
       const handleChange = useCallback((e) => {
-        setInputValue(e.target.value)
+        setInputValue(e.target.value)                                     
       }, [])
+
+    
 
     return(
         <div>
