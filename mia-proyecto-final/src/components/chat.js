@@ -10,8 +10,6 @@ function Chat() {
   const [message, setMessage] = useState('')
   const [inputValue, setInputValue] = useState('')
 
-  const { messages } = this.props;
-
   useEffect(() => {
     socket.onopen = () => {
       setMessage('Connected')
@@ -48,7 +46,7 @@ function Chat() {
       <NavCliente />
       <input id="input" type="text" value={inputValue} onChange={handleChange} />
       <ul className="list-group">
-        {messages.map(m => this.renderMessage(handleChange))}
+      
       </ul>
       <button onClick={handleClick}>Send</button>
       <pre>{message}</pre>
