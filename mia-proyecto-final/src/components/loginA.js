@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router-dom'
 import { withCookies, Cookies } from 'react-cookie'
 import Naviga from './navigate'
+import Cookies from 'universal-cookie'
+
+const cookies = new Cookies();
 
 export default class login extends Component {
 
