@@ -28,10 +28,15 @@ export default class login extends Component {
             return response.data;
         })
         .then(response=>{
-                cookies.set('id',response.ID,{path:"/"});
+                if(response.ID===0){
+                    alert("usuario incorrecto")
+                }else{
+                    cookies.set('id',response.ID,{path:"/"});
                 cookies.set('username',response.Username,{path:"/"});
                 alert(`Bienvenido ${response.Username}`);
                 window.location.href="./estudiante";
+                }
+                
         })
         .catch(error=>{
             console.log(error)
