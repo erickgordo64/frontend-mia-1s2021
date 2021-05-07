@@ -4,7 +4,6 @@ import { instanceOf } from 'prop-types'
 import axios from 'axios'
 import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router-dom'
-import Naviga from './navigate'
 import Cookies from 'universal-cookie'
 
 const cookies = new Cookies();

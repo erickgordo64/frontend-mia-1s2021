@@ -11,7 +11,7 @@ export default class DashA extends Component{
     async componentDidMount() {
         
        if(!cookies.get('id')){
-            window.location.href="./";
+            window.location.href="./loginA";
         }   
     }
 
