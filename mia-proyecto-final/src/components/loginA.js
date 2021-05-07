@@ -23,7 +23,6 @@ export default class login extends Component {
         return (
             <center>
                 <div>
-                    <Naviga></Naviga>
                     <br/>
                     <br/>
                     <div className="col-md-5">

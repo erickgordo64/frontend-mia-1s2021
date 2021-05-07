@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import NavCliente from './navcliente';
+import Navigate from './navigate';
 
 function Carga(){
     
@@ -29,6 +29,8 @@ function Carga(){
    
         return(
             <div>
+                <Navigate/>
+                <br></br>
                 <input type="file" name="files" multiple onChange={(e)=>subirArchivos(e.target.files)}></input>
                 <button className="btn btn-primary" onClick={()=>insertarArchivos()}>insertar</button>
             </div>

@@ -10,9 +10,9 @@ export default class DashA extends Component{
 
     async componentDidMount() {
         
-        if(!cookies.get('id')){
+       /* if(!cookies.get('id')){
             window.location.href="./";
-        }     
+        }   */  
     }
 
     render(){
