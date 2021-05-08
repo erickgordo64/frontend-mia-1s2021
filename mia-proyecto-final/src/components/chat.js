@@ -38,9 +38,7 @@ function Chat() {
   const handleChange = useCallback((e) => {
     setInputValue(e.target.value)
   }, [])
-
-
-
+  
   return (
     <div>
       <NavCliente />
