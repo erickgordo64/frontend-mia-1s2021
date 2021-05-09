@@ -9,6 +9,7 @@ import Carga from './components/carga'
 import Chat from './components/chat'
 import DashA from './components/dashA'
 import EventCalendar from './components/calendar'
+import Registro from './components/registrouser'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/chat" component={Chat}></Route>
       <Route path="/DashA" component={DashA}></Route>
       <Route path='/calendario' component={EventCalendar}></Route>
+      <Route path="/registro" component={Registro}></Route>
     </Router>
   );
 }

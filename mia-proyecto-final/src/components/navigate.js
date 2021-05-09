@@ -33,6 +33,9 @@ export default class Navegar extends Component {
                                 <a class="nav-link" href="/jornadas">Jornadas</a>
                             </li>
                             <li>
+                                <a class="nav-link" href="/temporadas">Temporadas</a>
+                            </li>
+                            <li>
                                 <a class="nav-link" href="/resultados">Resultados</a>
                             </li>
                             <li>
