@@ -8,7 +8,21 @@ import { Redirect } from 'react-router-dom'
 export default class Registro extends Component {
     onSubmitcolaborador = async (e) => {
         e.preventDefault();
-
+        var usr = document.getElementById('user').value;
+        var contra = document.getElementById('contrasena').value;
+        var nom = document.getElementById('nombre').value;
+        var ape = document.getElementById('apellido').value;
+        var fech = document.getElementById('fecha').value;
+        var corr = document.getElementById('correo').value;
+        const res = await axios.post('http://localhost:4000/addUser', {
+            usuario: usr,
+            password: contra,
+            nombre: nom,
+            apellido: ape,
+            date: fech,
+            correo: corr
+        });
+        alert(res.data);
     }
     render() {
         return (
