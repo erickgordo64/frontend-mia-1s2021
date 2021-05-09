@@ -8,6 +8,7 @@ import Estudiante from './components/estudiante';
 import Carga from './components/carga'
 import Chat from './components/chat'
 import DashA from './components/dashA'
+import EventCalendar from './components/calendar'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Route path="/carga" component={Carga}></Route>
       <Route path="/chat" component={Chat}></Route>
       <Route path="/DashA" component={DashA}></Route>
-
+      <Route path='/calendario' component={EventCalendar}></Route>
     </Router>
   );
 }

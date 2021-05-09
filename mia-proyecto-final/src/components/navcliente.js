@@ -26,7 +26,7 @@ export default class NavCliente extends Component {
                                 <a class="nav-link" href="/DashC">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/DashA">Link</a>
+                                <a class="nav-link" href="/calendario">Eventos</a>
                             </li>
                             <li>
                                 <a class="nav-link" href="/jornadas">Jornadas</a>
@@ -42,6 +42,9 @@ export default class NavCliente extends Component {
                             </li>
                             <li>
                                 <a class="nav-link" href="/reportes">Reportes</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="/chat">chat</a>
                             </li>
                             <li class="nav-item">
                                 <button type="button" class="btn btn-danger" onClick={(e) => this.cerrarSesion()}>logout</button>
