@@ -5,10 +5,22 @@ import Cookies from 'universal-cookie'
 import NavCliente from './navcliente'
 
 const socket = new WebSocket("ws://localhost:4000/ws")
+const cookies = new Cookies();
 
 function Chat() {
   const [message, setMessage] = useState('')
   const [inputValue, setInputValue] = useState('')
+
+  const [prueba, setPrueba] = useState([])
+    
+    const fetchMyAPI = useCallback(async () => {
+      const id = cookies.get('id');
+      console.log(id);
+      let response = await fetch(`http://localhost:4000/MostrarMensajesChat/${id}`)
+      response = await response.json()
+      setPrueba(response)
+      console.log(prueba)
+    }, [prueba])
 
   useEffect(() => {
     socket.onopen = () => {
@@ -33,7 +45,9 @@ function Chat() {
     socket.send(JSON.stringify({
       message: inputValue
     }))
-  }, [inputValue])
+
+    fetchMyAPI();
+  }, [inputValue, fetchMyAPI])
 
   const handleChange = useCallback((e) => {
     setInputValue(e.target.value)
