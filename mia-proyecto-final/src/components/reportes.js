@@ -5,18 +5,7 @@ import Cookies from 'universal-cookie';
 import { Bar, Pie, Doughnut, Line } from 'react-chartjs-2';
 import Navigate from './navigate';
 
-const  state = {
-    labels: [],
-    datasets: [
-        {
-            label: 'Rainfall',
-            backgroundColor: 'rgba(75,192,192,1)',
-            borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
-            data: []
-        }
-    ]
-}
+
 
 const state2 = {
     labels: ['January', 'February', 'March',
@@ -43,7 +32,7 @@ const state2 = {
     ]
 }
 
-const data = {
+const data2 = {
     labels: [],
     datasets: [
         {
@@ -73,7 +62,9 @@ const data = {
 
 export default class Reportes extends Component {
 
-   
+   state={
+       d:[]
+   }
 
     componentDidMount() {
         this.getActividades();
@@ -81,11 +72,30 @@ export default class Reportes extends Component {
 
     getActividades = async () => {
         const res = await axios.get('http://localhost:4000/tasks');
-        state.labels=res.data.map(id=>(id.ID))
+        this.setState({
+            d:res.data.map(id=>(id.ID))
+        })
         console.log(res.data.map(id=>(id.ID)));
     }
 
     render() {
+
+        var  state = {
+            labels: ['0','3','5','10','12'],
+            
+            datasets: [
+                {
+                    label: 'Rainfall',
+                    backgroundColor: 'rgba(75,192,192,1)',
+                    borderColor: 'rgba(0,0,0,1)',
+                    borderWidth: 2,
+                    data: this.state.d
+                },
+            
+            ]
+        }
+
+
         return (
             <div>
                 <Navigate></Navigate>
@@ -153,7 +163,7 @@ export default class Reportes extends Component {
                     <div class="row">
                         <div class="col align-self-center">
                             <Line
-                                data={data}
+                                data={data2}
                                 options={{
                                     title: {
                                         display: true,
