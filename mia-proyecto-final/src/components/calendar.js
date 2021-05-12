@@ -3,9 +3,11 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import NavCliente from './navcliente'   
 import axios from 'axios'
+import Cookies from 'universal-cookie'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 require('moment/locale/es.js');
 
+const cookies = new Cookies();
 
 const localizer = momentLocalizer(moment);
 
@@ -27,7 +29,9 @@ export default class EventCalendar extends Component {
     }
 
     async componentDidMount() {
-        
+        if(!cookies.get('id')){
+            window.location.href="./";
+        }          
         this.getActividades();
     }
 
