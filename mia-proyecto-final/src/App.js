@@ -11,6 +11,7 @@ import DashA from './components/dashA'
 import EventCalendar from './components/calendar'
 import Registro from './components/registrouser'
 import Reportes from './components/reportes'
+import Temporadas from './components/temporada'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path='/calendario' component={EventCalendar}></Route>
       <Route path="/registro" component={Registro}></Route>
       <Route path="/reportes" component={Reportes}></Route>
+      <Route path="/temporadas" component={Temporadas}></Route>
     </Router>
   );
 }
