@@ -17,6 +17,9 @@ export default class Temporada extends Component {
         this.getTemporadas();
     }
 
+    onSubmitJornada = async (ID) =>{
+        window.location.href = "/jornadas/"+ID;
+    }
 
     onSubmitcolaborador = async (e) => {
         e.preventDefault();
@@ -88,6 +91,7 @@ export default class Temporada extends Component {
                                             <th scope="col">fecha inicio</th>
                                             <th scope="col">fecha fin</th>
                                             <th scope="col">estado</th>
+                                            <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -99,6 +103,10 @@ export default class Temporada extends Component {
                                                     <td>{post.fecha_inicio}</td>
                                                     <td>{post.fecha_fin}</td>
                                                     <td>{post.Estado}</td>
+                                                    <td>
+                                                        <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmitJornada(post.idtemporada)}>Jornadas</button>
+                                                        <button type="submit" className="btn btn-danger" onClick={(e) => this.onSubmitJornada(post.idtemporada)}>Update</button>
+                                                    </td>
                                                 </tr>
                                             })
                                         }

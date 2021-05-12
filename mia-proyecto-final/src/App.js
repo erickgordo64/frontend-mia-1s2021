@@ -1,4 +1,3 @@
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
@@ -12,6 +11,7 @@ import EventCalendar from './components/calendar'
 import Registro from './components/registrouser'
 import Reportes from './components/reportes'
 import Temporadas from './components/temporada'
+import Jornadas from './components/jornadas'
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
       <Route path="/registro" component={Registro}></Route>
       <Route path="/reportes" component={Reportes}></Route>
       <Route path="/temporadas" component={Temporadas}></Route>
+      <Route path="/jornadas/:ID" component={Jornadas}></Route>
     </Router>
   );
 }
