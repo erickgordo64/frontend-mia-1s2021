@@ -12,6 +12,7 @@ import Registro from './components/registrouser'
 import Reportes from './components/reportes'
 import Temporadas from './components/temporada'
 import Jornadas from './components/jornadas'
+import DashC from './components/dashC'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/carga" component={Carga}></Route>
       <Route path="/chat" component={Chat}></Route>
       <Route path="/DashA" component={DashA}></Route>
+      <Route path="/DashC" component={DashC}></Route>
       <Route path='/calendario' component={EventCalendar}></Route>
       <Route path="/registro" component={Registro}></Route>
       <Route path="/reportes" component={Reportes}></Route>
