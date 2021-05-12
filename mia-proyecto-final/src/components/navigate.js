@@ -27,10 +27,7 @@ export default class Navegar extends Component {
                                 <a class="nav-link" href="/carga">Carga Masiva<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/DashA">Link</a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="/jornadas">Jornadas</a>
+                                <a class="nav-link" href="/DashA">Dash</a>
                             </li>
                             <li>
                                 <a class="nav-link" href="/temporadas">Temporadas</a>

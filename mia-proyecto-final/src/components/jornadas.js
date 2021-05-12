@@ -18,6 +18,10 @@ class Jorandas extends Component{
         this.getJornada();
     }
 
+    onSubmitJornada = async (ID) =>{
+        window.location.href = "/eventos/"+ID;
+    }
+
     getJornada = async () => {
 
         var id = this.state.id
@@ -52,15 +56,15 @@ class Jorandas extends Component{
                                     <tbody>
                                         {
                                             this.state.alumnos.map(post => {
-                                                return <tr key={post.idtemporada}>
-                                                    <th scope="row">{post.idtemporada}</th>
+                                                return <tr key={post.idjornada}>
+                                                    <th scope="row">{post.idjornada}</th>
                                                     <td>{post.Nombre}</td>
                                                     <td>{post.fecha_inicio}</td>
                                                     <td>{post.fecha_fin}</td>
                                                     <td>{post.Estado}</td>
                                                     <td>
-                                                        <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmitJornada(post.idtemporada)}>Jornadas</button>
-                                                        <button type="submit" className="btn btn-danger" onClick={(e) => this.onSubmitJornada(post.idtemporada)}>Update</button>
+                                                        <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmitJornada(post.idjornada)}>Jornadas</button>
+                                                        <button type="submit" className="btn btn-danger" onClick={(e) => this.onSubmitJornada(post.idjornada)}>Update</button>
                                                     </td>
                                                 </tr>
                                             })
