@@ -41,9 +41,6 @@ export default class NavCliente extends Component {
                                 <a class="nav-link" href="/deportes">Deportes</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="/reportes">Reportes</a>
-                            </li>
-                            <li>
                                 <a class="nav-link" href="/chat">chat</a>
                             </li>
                             <li class="nav-item">
