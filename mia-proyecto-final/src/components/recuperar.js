@@ -4,12 +4,11 @@ import { instanceOf } from 'prop-types'
 import axios from 'axios'
 import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router-dom'
-import Naviga from './navigate'
 import Cookies from 'universal-cookie'
 
 const cookies = new Cookies();
 
-export default class login extends Component {
+export default class Recuperar extends Component {
 
     state = {
         form: {
@@ -21,22 +20,10 @@ export default class login extends Component {
     onSubmit = async (e) => {
         e.preventDefault();
         var nom = document.getElementById('usuario').value;
-        var des = document.getElementById('contraseña').value;
-
-        const res = await axios.post('http://localhost:4000/login', { Username: nom, Password: des })
+        console.log(nom)
+        const res = await axios.put('http://localhost:4000/reccontra', { correo: nom})
             .then(response => {
                 return response.data;
-            })
-            .then(response => {
-                if (response.ID === 0) {
-                    alert("usuario incorrecto")
-                } else {
-                    cookies.set('id', response.ID, { path: "/" });
-                    cookies.set('username', response.Username, { path: "/" });
-                    alert(`Bienvenido ${response.Username}`);
-                    window.location.href = "./DashC";
-                }
-
             })
             .catch(error => {
                 console.log(error)
@@ -58,21 +45,16 @@ export default class login extends Component {
                     <br />
                     <div className="col-md-5">
                         <div className="card card-body">
-                            <h2>login USUARIO</h2>
+                            <h2>RECUPERAR CONTRASEÑA</h2>
                             <br />
                             <br />
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
-                                    <h5>Usuario</h5>
+                                    <h5>correo</h5>
                                     <input id="usuario" className="form-control" type="text" />
-                                    <h5>Contraseña</h5>
-                                    <input id="contraseña" className="form-control" type="password" />
                                 </div>
-                                <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmit(e)}>Ingresar</button>
+                                <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmit(e)}>ENVIAR</button>
                             </form>
-                            <Link to="/registro" className="nav-link"><p>Registrar Usuario</p></Link>
-                            <Link to="/loginA" className="nav-link"><p>Login Admin</p></Link>
-                            <Link to="/recuperar" className="nav-link"><p>recuperar contraseña</p></Link>
                         </div>
                     </div>
                 </div>
