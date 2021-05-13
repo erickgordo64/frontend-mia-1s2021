@@ -55,7 +55,7 @@ export default class Deportes extends Component {
                                 <form onSubmit={this.onSubmit}>
                                     <h5>Nombre deporte</h5>
                                     <input
-                                        id="nombred"
+                                        id="nombre"
                                         type="text"
                                         className="form-control"
                                     />
