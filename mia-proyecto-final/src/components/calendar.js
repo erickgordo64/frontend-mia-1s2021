@@ -29,9 +29,6 @@ export default class EventCalendar extends Component {
     }
 
     async componentDidMount() {
-        if(!cookies.get('id')){
-            window.location.href="./";
-        }          
         this.getActividades();
     }
 
@@ -49,7 +46,7 @@ export default class EventCalendar extends Component {
     
 
     selectedEvent = (event) => {
-        window.alert(event.Title);
+        window.alert("Evento: "+event.Title+" inicio del evento: "+event.Start+" fin del evento: "+event.End);
       }                                 
     
     render() {
@@ -64,7 +61,7 @@ export default class EventCalendar extends Component {
                             titleAccessor="Title"
                             startAccessor="Start"
                             endAccessor="End"
-                            onSelecting={(event) => this.selectedEvent(event)}
+                            onSelectEvent={(event) => this.selectedEvent(event)}
 
                             messages={{
                                 next: "sig",
