@@ -88,8 +88,8 @@ export default class Deportes extends Component {
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">nombre</th>
-                                            <th scope="col">fecha inicio</th>
-                                            <th scope="col">fecha fin</th>
+                                            <th scope="col">imagen</th>
+                                            <th scope="col">color</th>
                                             <th scope="col">estado</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
@@ -100,7 +100,7 @@ export default class Deportes extends Component {
                                                 return <tr key={post.iddeporte}>
                                                     <th scope="row">{post.iddeporte}</th>
                                                     <td>{post.Nombre}</td>
-                                                    <td>{post.Imagen}</td>
+                                                    <td>{post.imagen}</td>
                                                     <td>{post.color}</td>
                                                     <td>
                                                         <button type="submit" className="btn btn-primary" onClick={(e) => this.onSubmitJornada(post.idtemporada)}>Jornadas</button>
