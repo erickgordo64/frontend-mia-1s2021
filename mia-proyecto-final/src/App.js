@@ -14,6 +14,7 @@ import Temporadas from './components/temporada'
 import Jornadas from './components/jornadas'
 import DashC from './components/dashC'
 import Recuperar from './components/recuperar'
+import Deportes from './components/deporte'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route path="/temporadas" component={Temporadas}></Route>
       <Route path="/jornadas/:ID" component={Jornadas}></Route>
       <Route path="/recuperar" component={Recuperar}></Route>
+      <Route path="/deporte" component={Deportes}></Route>
     </Router>
   );
 }
